@@ -8,3 +8,9 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+
+
+export const GET_STRINGS = 'Strings-App/App/GET_STRINGS';
+export const GET_STRINGS_SUCCESS = 'Strings-App/App/GET_STRINGS_SUCCESS';
+export const GET_STRINGS_ERROR = 'Strings-App/App/GET_STRINGS_ERROR';
+
