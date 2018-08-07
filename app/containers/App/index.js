@@ -13,17 +13,26 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
+import { FormattedMessage } from 'react-intl';
 import HomePage from 'containers/HomePage/Loadable';
 import InputPage from 'containers/InputPage/Loadable';
+import messages from '../HomePage/messages';
+import Title from '../../components/Title';
+import Wrapper from '../../components/Title/Wrapper';
 // import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
   return (
     <div>
+      <Wrapper>
+        <Title>
+          SHOW ME THE STRINGS
+          {/* <FormattedMessage {...messages.header} /> */}
+        </Title>
+      </Wrapper>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/strings" component={InputPage} />
+        <Route exact path="/input" component={InputPage} />
         {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </div>

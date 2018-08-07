@@ -10,30 +10,73 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import Title from '../../components/Title';
-import Wrapper from '../../components/Title/Wrapper';
-import { getStrings } from '../App/actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 
-// import List from '../../components/List';
+import injectSaga from 'utils/injectSaga';
+import {
+  makeSelectStrings,
+  makeSelectLoading,
+  makeSelectError,
+} from 'containers/App/selectors';
+import List from '../../components/List/index';
+import { getStrings } from '../App/actions';
+import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+export class HomePage extends React.PureComponent {
   componentDidMount() {
     this.props.getStrings();
   }
 
   render() {
+    const { loading, error, strings } = this.props;
+    const stringsListProps = {
+      loading,
+      error,
+      strings,
+    };
+
     return (
       <div>
-      <Wrapper>
-        <Title>
-          <FormattedMessage {...messages.header} />
-        </Title>
-      </Wrapper>
-      {/* <List /> */}
+        <li>
+          {/* {strings} */}
+        </li>
+        {/* <List {...stringsListProps} /> */}
       </div>
     );
   }
 }
+
+HomePage.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  strings: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  getStrings: PropTypes.func,
+};
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    getStrings: () => dispatch(getStrings()),
+  };
+}
+
+const mapStateToProps = createStructuredSelector({
+  strings: makeSelectStrings(),
+  loading: makeSelectLoading(),
+  error: makeSelectError(),
+});
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+const withSaga = injectSaga({ key: 'home', saga });
+
+export default compose(
+  withSaga,
+  withConnect,
+)(HomePage);
