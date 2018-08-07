@@ -21,7 +21,7 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-import List from '../../components/List/index';
+import List from '../../components/List';
 import { getStrings } from '../App/actions';
 import saga from './saga';
 
@@ -38,13 +38,12 @@ export class HomePage extends React.PureComponent {
       error,
       strings,
     };
-
+    console.log('strings', strings);
+    console.log('loading', loading);
+    console.log('error', error);
     return (
       <div>
-        <li>
-          {/* {strings} */}
-        </li>
-        {/* <List {...stringsListProps} /> */}
+        <List {...stringsListProps} />
       </div>
     );
   }
@@ -53,7 +52,7 @@ export class HomePage extends React.PureComponent {
 HomePage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  strings: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  strings: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.bool]),
   getStrings: PropTypes.func,
 };
 

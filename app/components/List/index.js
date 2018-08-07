@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import Ul from './Ul';
 import Wrapper from './Wrapper';
 
-function List(props) {
-  const ComponentToRender = props.component;
+function List({ strings, loading, error }) {
+  // const ComponentToRender = props.component;
   let content = <div />;
 
   // If we have items, render them
-  if (props.items) {
-    content = props.items.map(item => (
-      <ComponentToRender key={`item-${item.id}`} item={item} />
-    ));
-  } else {
+  if (strings) {
+    content = strings.map(string => <li key={string.id}>{string.string}</li>);
     // Otherwise render a single component
-    content = <ComponentToRender />;
+  } else if (loading) {
+    content = <div>Loading data</div>;
+  } else if (error){
+    content = <div>Error occured!</div>;
   }
 
   return (
@@ -26,8 +26,10 @@ function List(props) {
 }
 
 List.propTypes = {
-  component: PropTypes.func.isRequired,
-  items: PropTypes.array,
+  // component: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  strings: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.bool]),
 };
 
 export default List;

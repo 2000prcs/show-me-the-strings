@@ -19,6 +19,7 @@ import InputPage from 'containers/InputPage/Loadable';
 import messages from '../HomePage/messages';
 import Title from '../../components/Title';
 import Wrapper from '../../components/Title/Wrapper';
+import Footer from '../../components/Footer';
 // import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
@@ -26,8 +27,7 @@ export default function App() {
     <div>
       <Wrapper>
         <Title>
-          SHOW ME THE STRINGS
-          {/* <FormattedMessage {...messages.header} /> */}
+          <FormattedMessage {...messages.header} />
         </Title>
       </Wrapper>
       <Switch>
@@ -35,6 +35,7 @@ export default function App() {
         <Route exact path="/input" component={InputPage} />
         {/* <Route component={NotFoundPage} /> */}
       </Switch>
+      <Footer />
     </div>
   );
 }
