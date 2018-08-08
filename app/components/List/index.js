@@ -10,7 +10,7 @@ function List({ strings, loading, error }) {
 
   // If we have items, render them
   if (strings) {
-    content = strings.map(string => <li key={string.id}>{string.string}</li>);
+    content = strings.map(string => <li key={string.id}>{string.id} {string.string}</li>);
     // Otherwise render a single component
   } else if (loading) {
     content = <div>Loading data</div>;

@@ -5,16 +5,10 @@ router.use(bodyParser.json());
 
 const { getAllStrings, saveNewString } = require('../../db/index');
 
-// router.use((req, res, next) => {
-//   console.log('Connection success');
-//   next();
-// })
-
 router.get('/',(req, res) => {
   getAllStrings()
     .then(results => {
       res.writeHead(200);
-      console.log(results);
       res.end(JSON.stringify(results));
     })
     .catch(error => {
@@ -25,12 +19,11 @@ router.get('/',(req, res) => {
 });
 
 
-router.post('/strings/:string',(req, res) => {
-  saveNewString(req.params.string)
+router.post('/',(req, res) => {
+  saveNewString(req.body.newString)
     .then(results => {
       res.writeHead(200);
-      console.log(results);
-      res.json(results);
+      res.end(JSON.stringify(results));
     })
     .catch(error => {
       res.writeHead(404);
