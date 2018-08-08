@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import NavBar from './NavBar';
 import FooterLink from './FooterLink';
 import messages from './messages';
+import Button from '../Button';
 
 /* eslint-disable react/prefer-stateless-function */
 class Footer extends React.Component {
@@ -11,12 +12,12 @@ class Footer extends React.Component {
     return (
       <div>
         <NavBar>
-          <FooterLink to="/">
+          <Button to="/">
             Homepage
-          </FooterLink>
-          <FooterLink to="/input">
+          </Button>
+          <Button to="/input">
             Enter Your String
-          </FooterLink>
+          </Button>
         </NavBar>
       </div>
     );

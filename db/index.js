@@ -18,7 +18,7 @@ const getAllStrings = () => new Promise((resolve, reject) => {
   const query = 'SELECT * FROM Strings;';
   client.query(query)
     .then(res => {
-      console.log('fetched all strings');
+      console.log('Fetched all strings');
       resolve(res.rows);
     })
     .catch(err => {
@@ -29,8 +29,9 @@ const getAllStrings = () => new Promise((resolve, reject) => {
 
   // Query for inserting a new string to database
   const saveNewString = string => new Promise((resolve, reject) => {
-    const query = 'INSERT INTO Strings (string) VALUES ($1);';
-    const values = [string];
+    const query = 'INSERT INTO Strings (string, createdAt) VALUES ($1, $2);';
+    const date = new Date().toLocaleString();
+    const values = [string, date];
     client.query(query, values)
       .then(res => {
         console.log('Saved a new string');
@@ -42,6 +43,7 @@ const getAllStrings = () => new Promise((resolve, reject) => {
       });
   });
 
+  // DB inserting test
   // saveNewString('Mo is a cat lover');
 
   module.exports = {
