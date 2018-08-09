@@ -1,15 +1,51 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
-import HomePage from '../index';
-import messages from '../messages';
+import { HomePage, mapDispatchToProps } from '../index';
+import { getStrings } from '../../App/actions';
+
+const data = [
+  {
+    id: 1,
+    string: 'String 1',
+    createdat: '2018-08-09',
+  },
+  {
+    id: 2,
+    string: 'String 2',
+    createdat: '2018-08-09',
+  },
+  {
+    id: 3,
+    string: 'String 3',
+    createdat: '2018-08-09',
+  },
+];
 
 describe('<HomePage />', () => {
-  it('should render the page message', () => {
-    const renderedComponent = shallow(<HomePage />);
-    expect(
-      renderedComponent.contains(<FormattedMessage {...messages.header} />),
-    ).toEqual(true);
+  it('should fetch strings from DB', () => {
+    const mockString = jest.fn();
+    const HomepageWrapper = mount(
+      <HomePage loading error={false} strings={data} getStrings={mockString} />,
+    );
+    expect(mockString).toHaveBeenCalled();
+    HomepageWrapper.unmount();
+  });
+});
+
+describe('mapDispatchToProps', () => {
+  describe('getStrings', () => {
+    it('should be injected', () => {
+      const dispatch = jest.fn();
+      const result = mapDispatchToProps(dispatch);
+      expect(result.getStrings).toBeDefined();
+    });
+
+    it('should dispatch getStrings when called', () => {
+      const dispatch = jest.fn();
+      const result = mapDispatchToProps(dispatch);
+      result.getStrings();
+      expect(dispatch).toHaveBeenCalledWith(getStrings());
+    });
   });
 });

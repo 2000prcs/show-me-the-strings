@@ -16,7 +16,7 @@ import { Switch, Route } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import HomePage from 'containers/HomePage/Loadable';
 import InputPage from 'containers/InputPage/Loadable';
-import messages from '../HomePage/messages';
+import messages from './messages';
 import Title from '../../components/Title';
 import Wrapper from '../../components/Title/Wrapper';
 import Footer from '../../components/Footer';

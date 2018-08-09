@@ -36,7 +36,7 @@ function Table({ strings, loading, error }) {
       <TableBody>
         <tbody>
           <tr>
-            <Th>No</Th>
+            <Th>No #</Th>
             <Th>String</Th>
             <Th>Created Date/Time</Th>
           </tr>
