@@ -21,7 +21,7 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-import List from '../../components/List';
+import Table from '../../components/Table';
 import { getStrings } from '../App/actions';
 import saga from './saga';
 
@@ -39,12 +39,8 @@ export class HomePage extends React.PureComponent {
       strings,
     };
     console.log('strings', strings);
-    console.log('loading', loading);
-    console.log('error', error);
     return (
-      <div>
-        <List {...stringsListProps} />
-      </div>
+      <Table {...stringsListProps} />
     );
   }
 }
