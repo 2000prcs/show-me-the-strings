@@ -5,6 +5,7 @@ router.use(bodyParser.json());
 
 const { getAllStrings, saveNewString } = require('../../db/index');
 
+// GET request controller
 router.get('/',(req, res) => {
   getAllStrings()
     .then(results => {
@@ -19,6 +20,7 @@ router.get('/',(req, res) => {
 });
 
 
+// POST request controller
 router.post('/',(req, res) => {
   saveNewString(req.body.newString)
     .then(results => {

@@ -21,7 +21,7 @@ export function* saveNewString() {
     }, 
     body: JSON.stringify({ newString })
   }
-  // to do: add error handling, make use of async
+
   try {
     yield call(request, requestURL, requestHeader);
     yield put({ type: CHANGE_STRING, string: '' });

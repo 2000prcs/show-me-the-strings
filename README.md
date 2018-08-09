@@ -4,48 +4,65 @@
 
 ## Table of Contents
 
-1. [Usage](#usage)
-2. [Testing](#testing)
+1. [Requirements](#requirements)
+2. [Usage](#usage)
+3. [Testing](#testing)
 
 ## Demo
 
 <img width="400" height="300" src="https://i.imgur.com/c5ZTKH3.png">
 
-## Achievements
-
-1. 
-2. 
-3. 
-4. 
-5. 
-
 
 ## Requirements
 
 1. React Router
+
+Using two routes `/` and `/input` to navigate users to `Homepage` and `InputPage` with React Router.
+
 2. Redux
+
+Redux is used to manage states for two components.
+
 3. Redux Saga
+
+Redux Saga is used to fetch strings from DB with `fetchStrings()` and insert a new string to DB `saveNewString()`.
+
 4. Reselect
+
+Used selectors to handle states efficiently.
+
 5. Styled Components
+
+Created new styled components (Table, Title..) to improve UI.
+
 6. Unit Tests
 
+Implemented automate testing for HomePage component
 
 ## Prerequisites
 
-- Node 8.11.1
-- PostgreSQL 
+This app is implemented with Node.js (version 8.11.1) and PostgreSQL. Node and Postgres must be installed on the device to run the app. Please install them from the following links:
+
+- [NVM](https://github.com/creationix/nvm)
+- [PostgreSQL](https://www.postgresql.org/download/) 
 
 ## Usage
 
 From the root directory:
 
-1. Install project dependencies & Build a client bundle with Webpack:
+1. Install project dependencies:
 
 ```sh
 npm install
 ```
 
-2. Run schema to create `strings` database and table:
+2. Access postgres:
+
+```sh
+psql postgres;
+```
+
+3. Run schema to create `strings` database and table:
 
 ```sh
 \i db/schema.sql
@@ -62,6 +79,8 @@ npm start
 5. Enjoy!
 
 ## Testing
+
+Tests were built with Jest & Enzyme. I implemented unit tests for `HomePage` component with `test:string` command.
 
 ```sh
 npm run test:string
