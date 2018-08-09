@@ -1,4 +1,4 @@
-import { CHANGE_STRING, INSERT_STRING, INSERT_SUCCESS, INSERT_ERROR } from './constants';
+import { CHANGE_STRING, INSERT_STRING, INSERT_ERROR } from './constants';
 
 /**
  * Changes the input field of the form
@@ -22,17 +22,6 @@ export function changeCurrentString(string) {
 export function insertString() {
   return {
     type: INSERT_STRING,
-  };
-}
-
-/**
- * Error handling while insering a string to DB
- * *
- * @return {object}       An action object with a type of INSERT_SUCCESS passing the error
- */
-export function insertingDBSuccess() {
-  return {
-    type: INSERT_SUCCESS,
   };
 }
 

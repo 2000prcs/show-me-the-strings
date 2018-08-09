@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Ul from './Ul';
 import Wrapper from './Wrapper';
-import TableBody from './tableBody';
-import Td from './td';
-import Th from './th';
+import TableBody from './TableBody';
+import Td from './Td';
+import Th from './Th';
 
 function Table({ strings, loading, error }) {
   let content;
@@ -14,7 +14,15 @@ function Table({ strings, loading, error }) {
   // If we have items, render them
   if (strings) {
     dataLodaed = true;
-    content = strings.map(string => <tr key={string.id} ><Td>{string.id}</Td><Td>{string.string}</Td><Td>{string.createdat}</Td></tr>);
+    content = strings.map(string => {
+     return (
+      <tr key={string.id} >
+        <Td>{string.id}</Td>
+        <Td>{string.string}</Td>
+        <Td>{string.createdat.slice(0, 10)} {string.createdat.slice(12, 19)}</Td>
+      </tr>
+     ) 
+    });
     // Otherwise render a single component
   } else if (loading) {
     content = <span>Loading strings data...</span>;

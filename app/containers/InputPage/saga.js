@@ -2,7 +2,7 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { makeSelectNewString } from './selectors';
 import { CHANGE_STRING, INSERT_STRING } from './constants';
-import { insertingDBSuccess, insertingDBError } from './actions';
+import { insertingDBError } from './actions';
 
 
 import request from 'utils/request';
@@ -26,9 +26,10 @@ export function* saveNewString() {
     yield call(request, requestURL, requestHeader);
     yield put({ type: CHANGE_STRING, string: '' });
   } catch (err){
-    console.log(err);
+    alert('Error occured while storing your string');
     yield put(insertingDBError(err));
   }
+  alert('Stored your string successfully!');
 }
 
 /**
