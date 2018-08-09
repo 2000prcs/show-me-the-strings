@@ -20,7 +20,6 @@ import messages from '../HomePage/messages';
 import Title from '../../components/Title';
 import Wrapper from '../../components/Title/Wrapper';
 import Footer from '../../components/Footer';
-// import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
   return (
@@ -33,7 +32,6 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/input" component={InputPage} />
-        {/* <Route component={NotFoundPage} /> */}
       </Switch>
       <Footer />
     </div>

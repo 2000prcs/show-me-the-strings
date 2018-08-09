@@ -43,8 +43,8 @@ const getAllStrings = () => new Promise((resolve, reject) => {
       });
   });
 
-  // DB inserting test
-  // saveNewString('Mo is a cat lover');
+  // Insert a test string when server connects to DB
+  saveNewString('Mo is a cat lover');
 
   module.exports = {
     getAllStrings,
