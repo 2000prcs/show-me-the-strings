@@ -1,10 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
 import NavBar from './NavBar';
-import FooterLink from './FooterLink';
-import messages from './messages';
-import Button from '../Button';
+import Link from '../Link';
 
 /* eslint-disable react/prefer-stateless-function */
 class Footer extends React.Component {
@@ -12,12 +8,12 @@ class Footer extends React.Component {
     return (
       <div>
         <NavBar>
-          <Button to="/">
+          <Link to="/">
             Homepage
-          </Button>
-          <Button to="/input">
+          </Link>
+          <Link to="/input">
             Enter Your String
-          </Button>
+          </Link>
         </NavBar>
       </div>
     );

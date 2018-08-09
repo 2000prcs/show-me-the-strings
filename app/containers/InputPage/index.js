@@ -5,8 +5,8 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import Wrapper from './Wrapper';
-import Input from './input';
-import Form from './form';
+import Input from '../../components/Input';
+import Form from '../../components/Form';
 import injectReducer from 'utils/injectReducer';
 import { changeCurrentString, insertString } from './actions';
 import { makeSelectNewString } from './selectors';

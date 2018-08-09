@@ -38,7 +38,6 @@ export class HomePage extends React.PureComponent {
       error,
       strings,
     };
-    console.log('strings', strings);
     return (
       <Table {...stringsListProps} />
     );
