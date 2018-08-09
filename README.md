@@ -37,7 +37,7 @@ Created new styled components (Table, Title..) to improve UI.
 
 6. Unit Tests
 
-Implemented automate testing for HomePage component
+Implemented automate testing for HomePage component.
 
 ## Prerequisites
 
@@ -68,15 +68,21 @@ psql postgres;
 \i db/schema.sql
 ```
 
-3. Start Express server:
+4. Exit from postgres:
+
+```sh
+\q
+```
+
+5. Start Express server:
 
 ```sh
 npm start 
 ```
 
-4. Open browser at `127.0.0.1:3000` 
+6. Open browser at `127.0.0.1:3000` 
 
-5. Enjoy!
+7. Enjoy!
 
 ## Testing
 

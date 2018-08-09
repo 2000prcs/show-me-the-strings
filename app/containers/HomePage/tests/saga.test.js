@@ -34,17 +34,21 @@ describe('getData Saga', () => {
     expect(getDataGenerator.next(response).value).toEqual(put(stringsFetched(response)));
   });
   
-  it('Should be done', () => {
+  it('Should be done after the action', () => {
     expect(getDataGenerator.next().done).toEqual(true);
   });
 });
 
 
 describe('getData Saga', () => {
+  const getDataGenerator = fetchStrings();
   it('Should call the stringsFetchingError action if the response errors', () => {
-    const getDataGenerator = fetchStrings();
     getDataGenerator.next();
     expect(getDataGenerator.throw('error').value).toEqual(put(stringsFetchingError('error')));
+  });
+
+  it('Should be done after the action', () => {
+    expect(getDataGenerator.next().done).toEqual(true);
   });
 });
 
