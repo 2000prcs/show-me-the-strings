@@ -34,28 +34,28 @@ This app is implemented with Node.js (version 8.11.1) and PostgreSQL. Node and P
 
 From the root directory:
 
-1. Install project dependencies:
-
-```sh
-npm install
-```
-
-2. Access postgres:
+1. Access postgres:
 
 ```sh
 psql postgres;
 ```
 
-3. Run schema to create `strings` database and table:
+2. Run schema to create `strings` database and table:
 
 ```sh
 \i db/schema.sql
 ```
 
-4. Exit from postgres:
+3. Exit from postgres:
 
 ```sh
 \q
+```
+
+4. Install project dependencies:
+
+```sh
+npm install
 ```
 
 5. Start Express server:
