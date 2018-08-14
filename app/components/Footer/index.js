@@ -2,7 +2,6 @@ import React from 'react';
 import NavBar from './NavBar';
 import Link from '../Link';
 
-/* eslint-disable react/prefer-stateless-function */
 class Footer extends React.Component {
   render() {
     return (

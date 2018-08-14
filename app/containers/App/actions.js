@@ -7,12 +7,6 @@
  * your application state. This guarantees that your state is up to date and nobody
  * messes it up weirdly somewhere.
  *
- * To add a new Action:
- * 1) Import your constant
- * 2) Add a function like this:
- *    export function yourAction(var) {
- *        return { type: YOUR_ACTION_CONSTANT, var: var }
- *    }
  */
 
 import { GET_STRINGS, GET_STRINGS_SUCCESS, GET_STRINGS_ERROR } from './constants';

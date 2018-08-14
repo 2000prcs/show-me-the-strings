@@ -2,7 +2,6 @@ import { fromJS } from 'immutable';
 
 import { CHANGE_STRING, INSERT_STRING } from './constants';
 
-// The initial state of the App
 export const initialState = fromJS({
   newString: '',
   saved: false,

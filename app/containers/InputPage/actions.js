@@ -27,11 +27,11 @@ export function insertString() {
 
 
 /**
- * Error handling while insering a string to DB
+ * Error handling while insering a new string to DB
  *
  * @param  {object} error The error
  *
- * @return {object}       An action object with a type of GET_STRINGS_ERROR passing the error
+ * @return {object}       An action object with a type of INSERT_ERROR passing the error
  */
 export function insertingDBError(error) {
   return {

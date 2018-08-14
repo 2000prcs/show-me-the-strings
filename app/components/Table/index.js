@@ -31,15 +31,18 @@ function Table({ strings, loading, error }) {
   }
 
 
+  // if strings are loaded from DB, render a table. Otherwise render a single component
   if(dataLodaed){
     return (
       <TableBody>
-        <tbody>
+        <thead>
           <tr>
             <Th>No #</Th>
             <Th>String</Th>
             <Th>Created Date/Time</Th>
           </tr>
+        </thead>
+        <tbody>
           {content}
         </tbody>
       </TableBody>

@@ -13,7 +13,6 @@ import { makeSelectNewString } from './selectors';
 import reducer from './reducer';
 
 
-/* eslint-disable react/prefer-stateless-function */
 export class InputPage extends React.PureComponent {
   render() {
     return (
