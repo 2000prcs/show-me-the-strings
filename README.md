@@ -13,8 +13,13 @@
 <img width="500" height="300" src="https://i.imgur.com/HADHvYo.png">
 
 
-DON'T FORGET TO EDIT TABLE (tbody / thead)
+## Achievements
 
+1. Separated DB handlers from Server for modularzation
+2. Leveraged styled components to organize data in a table format
+3. Simple and clean UI 
+4. Leveraged Redux, Redux Saga and Reselect to manage states
+5. Implemented unit tests for two containers
 
 ## Requirements
 
@@ -24,23 +29,23 @@ Using two routes `/` and `/input` to navigate users to `Homepage` and `InputPage
 
 2. Redux
 
-Redux is used to manage states for two components.
+Redux is used to manage states for both containers.
 
 3. Redux Saga
 
-Redux Saga is used to fetch strings from DB with `fetchStrings()` and insert a new string to DB `saveNewString()`.
+Redux Saga is used to fetch strings from DB with `fetchStrings()` and insert a new string to DB `saveString()`.
 
 4. Reselect
 
-Used selectors to handle states efficiently.
+Used selectors for `InputPage` container to handle states efficiently.
 
 5. Styled Components
 
-Created new styled components (Table, Title..) to improve UI.
+Created new styled components such as `Table`, `Title`, `Footer`, and `Link` to improve UI.
 
 6. Unit Tests
 
-Implemented automate testing for HomePage component.
+Wrote automated unit tests for both containers.
 
 ## Prerequisites
 
@@ -89,7 +94,7 @@ npm start
 
 ## Testing
 
-Tests were built with Jest & Enzyme. I implemented unit tests for `HomePage` component with `test:string` command.
+Tests were built with Jest & Enzyme. I implemented unit tests for `HomePage` and `InputPage` component with `test:string` command.
 
 ```sh
 npm run test:string

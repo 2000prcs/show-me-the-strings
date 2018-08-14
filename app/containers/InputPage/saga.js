@@ -11,7 +11,7 @@ import request from 'utils/request';
 /**
  * String request/response handler
  */
-export function* saveNewString() {
+export function* saveString() {
   const newString = yield select(makeSelectNewString());
   const requestURL = 'http://localhost:3000/strings';
   const requestHeader = {
@@ -36,5 +36,5 @@ export function* saveNewString() {
  * Root saga manages watcher lifecycle
  */
 export default function* saveStrings() {
-  yield takeEvery(INSERT_STRING, saveNewString);
+  yield takeEvery(INSERT_STRING, saveString);
 }
