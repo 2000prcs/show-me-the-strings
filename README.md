@@ -1,12 +1,12 @@
 # Show Me The Strings
 > Web application to store & display strings
 
-
 ## Table of Contents
 
 1. [Requirements](#requirements)
 2. [Usage](#usage)
 3. [Testing](#testing)
+
 
 ## Demo
 
@@ -21,31 +21,6 @@
 4. Leveraged Redux, Redux Saga and Reselect to manage states
 5. Implemented unit tests for two containers
 
-## Requirements
-
-1. React Router
-
-Using two routes `/` and `/input` to navigate users to `Homepage` and `InputPage` with React Router.
-
-2. Redux
-
-Redux is used to manage states for both containers.
-
-3. Redux Saga
-
-Redux Saga is used to fetch strings from DB with `fetchStrings()` and insert a new string to DB `saveString()`.
-
-4. Reselect
-
-Used selectors for `InputPage` container to handle states efficiently.
-
-5. Styled Components
-
-Created new styled components such as `Table`, `Title`, `Footer`, and `Link` to improve UI.
-
-6. Unit Tests
-
-Wrote automated unit tests for both containers.
 
 ## Prerequisites
 
@@ -53,6 +28,7 @@ This app is implemented with Node.js (version 8.11.1) and PostgreSQL. Node and P
 
 - [NVM](https://github.com/creationix/nvm)
 - [PostgreSQL](https://www.postgresql.org/download/) 
+
 
 ## Usage
 
@@ -92,6 +68,7 @@ npm start
 
 7. Enjoy!
 
+
 ## Testing
 
 Tests were built with Jest & Enzyme. I implemented unit tests for `HomePage` and `InputPage` component with `test:string` command.
@@ -100,10 +77,42 @@ Tests were built with Jest & Enzyme. I implemented unit tests for `HomePage` and
 npm run test:string
 ```
 
+## Requirements
+
+1. Main Design
+
+The main page displays all strings stored in the database, a user can navigate to the input page to save strings as well.
+
+2. React Router
+
+Using two routes `/` and `/input` to navigate users to `Homepage` and `InputPage` with React Router.
+
+3. Redux
+
+Redux is used to manage states for both containers.
+
+4. Redux Saga
+
+Redux Saga is used to fetch strings from DB with `fetchStrings()` and insert a new string to DB `saveString()`.
+
+5. Reselect
+
+Used selectors for `InputPage` container to handle states efficiently.
+
+6. Styled Components
+
+Created new styled components such as `Table`, `Title`, `Footer`, and `Link` to improve UI.
+
+7. Unit Tests
+
+Wrote automated unit tests for both containers.
+
+
 ## Built With
 
 * [React](https://reactjs.org) 
 * [NPM](https://www.npmjs.com)
+* [Express](https://expressjs.com)
 * [PostgreSQL](https://www.postgresql.org/docs)
 * [React Router](https://reacttraining.com/react-router/web/guides/philosophy) 
 * [Redux](https://redux.js.org)
@@ -112,6 +121,7 @@ npm run test:string
 * [Styled Components](https://www.styled-components.com)
 * [Jest](https://jestjs.io)
 * [Enzyme](https://airbnb.io/enzyme)
+
 
 ## Style Guide
 
