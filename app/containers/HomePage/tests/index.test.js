@@ -45,7 +45,7 @@ describe('mapDispatchToProps', () => {
       const dispatch = jest.fn();
       const result = mapDispatchToProps(dispatch);
       result.getStrings();
-      expect(dispatch).toHaveBeenCalledWith(getStrings());
+      expect(dispatch).toHaveBeenLastCalledWith(getStrings());
     });
   });
 });

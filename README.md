@@ -13,6 +13,9 @@
 <img width="400" height="300" src="https://i.imgur.com/c5ZTKH3.png">
 
 
+DON'T FORGET TO EDIT TABLE (tbody / thead)
+
+
 ## Requirements
 
 1. React Router

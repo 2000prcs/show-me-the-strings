@@ -45,7 +45,7 @@ const mapStateToProps = createStructuredSelector({
   newString: makeSelectNewString(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     onSubmitForm: e => {
       if (e !== undefined && e.preventDefault) e.preventDefault();
