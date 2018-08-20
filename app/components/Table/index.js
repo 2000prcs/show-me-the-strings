@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Ul from './Ul';
 import Wrapper from './Wrapper';
-import TableBody from './TableBody';
-import Td from './Td';
-import Th from './Th';
+import TableBody from './tableBody';
+import Td from './td';
+import Th from './th';
 
 function Table({ strings, loading, error }) {
   let content;
