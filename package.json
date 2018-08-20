@@ -101,7 +101,8 @@
       "express",
       "ip",
       "minimist",
-      "sanitize.css"
+      "sanitize.css",
+      "pg"
     ],
     "include": [
       "core-js",
